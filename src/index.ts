@@ -1,3 +1,4 @@
-let string:string = 'esta wea es una prueba'
+const body = document.querySelector('body')
+const header = document.createElement('header')
 
-console.log(string)
+body?.appendChild(header)

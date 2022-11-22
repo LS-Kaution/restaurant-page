@@ -1,8 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background: transparent;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
 
 body {
-    background: green;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(/style/body-img.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 1.6rem;
 
-    div {
-        color: blue;
+    header {
+        height: 100%;
+        max-height: 15%;
+        width: 100%;
+        background-color: aquamarine;
     }
 }
