@@ -1,3 +1,22 @@
+//fonts
+@font-face {
+    font-family: 'aretha-bridge';
+    src: url(aretha-bridge.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'high-society';
+    src: url(high-society.ttf) format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+
+
+// variables
+$github-hover-color: #9361FF;
+$container-background-color: rgba(70, 109, 109, 0.623);
+$container-background: rgba(0, 0, 0, 0.1);
+
 * {
     margin: 0;
     padding: 0;
@@ -16,36 +35,150 @@ html {
 
 
 body {
-    height: 100vh;
+    height: 100%;
     width: 100vw;
-    background-image: url(/style/body-img.png);
-    background-size: cover;
-    background-repeat: no-repeat;
     font-size: 1.6rem;
+    position: relative;
+    padding-bottom: 10rem;
 
-    #content {
-        height: 100%;
-        width: 100%;
-    }
+    #content {       
+        header {
+            height: 15rem;
+            width: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 1rem;
 
-    header {
-        height: 100%;
-        max-height: 15%;
-        width: 100%;
-        background-color: aquamarine;
+            h1 {
+                font-family: 'aretha-bridge';
+                font-weight: 700;
+                font-size: 4rem;
+                color: whitesmoke;
+            }
+
+            section {
+                display: flex;
+                gap: 1rem;
+            }
+
+            .buttons {
+                font-family: 'PT Sans Narrow, sans-serif';
+                font-size: 2.6rem;
+                padding: 1.3rem 3rem;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                letter-spacing: 0.25rem;
+                font-weight: 500;
+                color: #000;
+                background-color: #fff;
+                border: none;
+                border-radius: 4.5rem;
+                box-shadow: 0px 0.8rem 1.5rem rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease 0s;
+                cursor: pointer;
+                outline: none;
+            }
+
+            .buttons:hover {
+                background-color: #23c483;
+                box-shadow: 0px 1.5rem 2.0rem rgba(46, 229, 157, 0.4);
+                color: #fff;
+                transform: translateY(-0.7rem);
+            }
+
+            .buttons:active {
+                transform: translateY(-0.1rem);
+            }
+        }
     }
 
     main {
         height: 100%;
-        max-height: 75%;
         width: 100%;
-        max-width: 80%;
+        padding: 2rem;
+
+        #section-one {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 3rem;
+
+            h1 {
+                font-family: 'high-society';
+                font-size: 2.9rem;
+                padding: 1rem;
+                color: rgb(25, 30, 104);
+            }
+
+            img {
+                height: 35rem;
+                width: 35rem;
+                border-radius: 2.5rem 0 0 2.5rem;
+            }
+
+            p {
+                font-family: 'PT Sans Narrow', sans-serif;
+                font-size: 2.6rem;
+                padding: 1rem;
+                color: black;
+            }
+
+            #primary-div-of-section-one {
+                height: 35rem;
+                width: 120rem;
+                display: flex;
+                gap: 1.5rem;
+                background-color: $container-background-color;
+                background: $container-background;
+                border-radius: 2.5rem;             
+            }
+
+            #secundary-div-of-section-one {
+                height: 35rem;
+                width: 120rem;
+                display: flex;
+                gap: 1.5rem;
+                background-color: $container-background-color;
+                background: $container-background;
+                border-radius: 2.5rem;             
+            }
+
+            #tertiary-div-of-section-one {
+                height: 35rem;
+                width: 120rem;
+                display: flex;
+                gap: 1.5rem;
+                background-color: $container-background-color;
+                background: $container-background;
+                border-radius: 2.5rem;             
+            }
+        }
     }
 
     footer {
-        height: 100%;
-        max-height: 10%;
+        height: 7rem;
         width: 100%;
-        background-color: aquamarine; 
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        a {
+            height: 5rem;
+            width: 5rem;
+            transition: 0.8s;
+        }
+        
+        a:hover {
+            fill: $github-hover-color !important;
+            transform: rotate(360deg);
+            transition: 0.8s;
+        }
     }
 }
