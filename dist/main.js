@@ -1,1 +1,1 @@
-(()=>{var e=document.querySelector("body"),d=document.createElement("header");null==e||e.appendChild(d)})();
+(()=>{var e=document.querySelector("#content"),n=document.createElement("header"),t=document.createElement("main"),l=document.createElement("footer");null==e||e.prepend(n),null==e||e.appendChild(l),null==e||e.insertBefore(t,l)})();
