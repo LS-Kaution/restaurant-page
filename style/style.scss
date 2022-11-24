@@ -14,8 +14,11 @@
 
 // variables
 $github-hover-color: #9361FF;
-$container-background-color: rgba(70, 109, 109, 0.623);
-$container-background: rgba(0, 0, 0, 0.1);
+$container-section-one-background-color: rgba(70, 109, 109, 0.623);
+$container-section-one-background: rgba(0, 0, 0, 0.1);
+$container-section-two-background-color: #222;
+$input-background-color: whitesmoke;
+$input-font-color: rgb(3, 1, 17);
 
 * {
     margin: 0;
@@ -31,17 +34,23 @@ $container-background: rgba(0, 0, 0, 0.1);
 
 html {
     font-size: 62.5%;
+    overflow-x: hidden;
 }
 
 
 body {
-    height: 100%;
+    height: 100vh;
     width: 100vw;
     font-size: 1.6rem;
     position: relative;
     padding-bottom: 10rem;
 
-    #content {       
+    #content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
         header {
             height: 15rem;
             width: 100%;
@@ -101,6 +110,8 @@ body {
         padding: 2rem;
 
         #section-one {
+            height: 125rem;
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -132,9 +143,9 @@ body {
                 width: 120rem;
                 display: flex;
                 gap: 1.5rem;
-                background-color: $container-background-color;
-                background: $container-background;
-                border-radius: 2.5rem;             
+                background-color: $container-section-one-background-color;
+                background: $container-section-one-background;
+                border-radius: 2.5rem;
             }
 
             #secundary-div-of-section-one {
@@ -142,9 +153,9 @@ body {
                 width: 120rem;
                 display: flex;
                 gap: 1.5rem;
-                background-color: $container-background-color;
-                background: $container-background;
-                border-radius: 2.5rem;             
+                background-color: $container-section-one-background-color;
+                background: $container-section-one-background;
+                border-radius: 2.5rem;
             }
 
             #tertiary-div-of-section-one {
@@ -152,17 +163,53 @@ body {
                 width: 120rem;
                 display: flex;
                 gap: 1.5rem;
-                background-color: $container-background-color;
-                background: $container-background;
-                border-radius: 2.5rem;             
+                background-color: $container-section-one-background-color;
+                background: $container-section-one-background;
+                border-radius: 2.5rem;
+            }
+        }
+
+        #section-two {
+            height: 50rem;
+            width: 100%;
+            background-color: $container-section-two-background-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 2rem;
+
+            h1 {
+                font-family: 'high-society';
+                font-size: 2.9rem;
+                padding: 1rem;
+                color: whitesmoke;
+            }
+
+            img {
+                height: 5rem;
+                width: 5rem;
+            }
+
+            #primary-div-of-section-two {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            #secundary-div-of-section-two {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 16rem;
             }
         }
     }
 
     footer {
-        height: 7rem;
+        height: 10rem;
         width: 100%;
-        position: absolute;
         bottom: 0;
         display: flex;
         justify-content: center;
@@ -174,11 +221,92 @@ body {
             width: 5rem;
             transition: 0.8s;
         }
-        
+
         a:hover {
-            fill: $github-hover-color !important;
+            fill: $github-hover-color;
             transform: rotate(360deg);
             transition: 0.8s;
         }
+    }
+}
+
+form {
+    height: 65rem;
+    width: 55rem;
+    background-color: $container-section-two-background-color;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 3rem;
+
+    #div-name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+    }
+    
+    .n1, .n2 {
+        background-color: $input-background-color;
+        color: $input-font-color;
+        font-family: 'PT Sans Narrow', sans-serif;
+        font-size: 2rem;
+        border-radius: 1rem;
+        width: 22rem;
+        height: 5rem;
+        padding: 1rem;
+    }
+
+    .n3 {
+        background-color: $input-background-color;
+        color: $input-font-color;
+        font-family: 'PT Sans Narrow', sans-serif;
+        font-size: 2rem;
+        border-radius: 1rem;
+        width: 47rem;
+        height: 5rem;
+        padding: 1rem;
+    }
+
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+    }
+    input[type=number] { -moz-appearance:textfield; }
+
+    
+    .n4 {
+        background-color: $input-background-color;
+        color: $input-font-color;
+        font-family: 'PT Sans Narrow', sans-serif;
+        font-size: 2rem;
+        border-radius: 1rem;
+        width: 47rem;
+        height: 30rem;
+        padding: 1rem;
+    }
+
+    .n4::placeholder {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    ::placeholder {
+        padding: 1rem;
+    }
+
+    #button-submit {
+        background-color: $input-background-color;
+        color: $input-font-color;
+        font-family: 'PT Sans Narrow', sans-serif;
+        font-size: 2rem;
+        border-radius: 1rem;
+        height: 6rem;
+        width: 20rem;
     }
 }
