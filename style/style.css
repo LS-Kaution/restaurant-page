@@ -194,16 +194,26 @@ body footer a:hover {
 }
 
 form {
-  height: 65rem;
+  height: 75rem;
   width: 55rem;
   background-color: #222;
   border-radius: 2rem;
+  margin-top: 7rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 3rem;
   margin-bottom: 3rem;
+}
+form h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "high-society";
+  font-size: 2.3rem;
+  padding: 1rem;
+  color: whitesmoke;
 }
 form #div-name {
   display: flex;

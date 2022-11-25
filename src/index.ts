@@ -26,49 +26,53 @@ function callHeader() {
     sectionOfHeader?.appendChild(buttonTwo)
     sectionOfHeader?.appendChild(buttonThree)
 
-    buttonOne.addEventListener('click', callButtonHome)
+    const h1OfForm = document.createElement('h1')
+    h1OfForm.textContent = 'PLEASE, ENTER YOUR INFORMATION FOR YOUR ORDER'
+    
+
+    const divName = document.createElement('div')
+    divName.setAttribute('id', 'div-name')
+
+    const nameInput = document.createElement('input')
+    nameInput.setAttribute('class', 'input n1')
+    nameInput.setAttribute('type', 'text')
+    nameInput.setAttribute('name', 'firts-name')
+    nameInput.setAttribute('placeholder', 'Enter your firts name')
+    nameInput.setAttribute('required', '')
+
+    const lastNameInput = document.createElement('input')
+    lastNameInput.setAttribute('class', 'input n2')
+    lastNameInput.setAttribute('type', 'text')
+    lastNameInput.setAttribute('name', 'last-name')
+    lastNameInput.setAttribute('placeholder', 'Enter your last name')
+    lastNameInput.setAttribute('required', '')
+
+    const phoneInput = document.createElement('input')
+    phoneInput.setAttribute('class', 'input n3')
+    phoneInput.setAttribute('type', 'number')
+    phoneInput.setAttribute('name', 'phone-number')
+    phoneInput.setAttribute('placeholder', 'Enter your phone number')
+    phoneInput.setAttribute('required', '')
+
+    const textContent = document.createElement('input')
+    textContent.setAttribute('class', 'input n4')
+    textContent.setAttribute('type', 'tex')
+    textContent.setAttribute('name', 'text-content')
+    textContent.setAttribute('placeholder', 'Enter your order...')
+    textContent.setAttribute('required', '')
+
+    const buttonSubmit = document.createElement('input')
+    buttonSubmit.setAttribute('id', 'button-submit')
+    buttonSubmit.setAttribute('type', 'submit')
+
+
     buttonThree.addEventListener('click', callButtonContact)
-
     function callButtonContact() {
-        main.style.display = 'none'   
-        content?.appendChild(form)
-
-        const divName = document.createElement('div')
-        divName.setAttribute('id', 'div-name')
-
-        const nameInput = document.createElement('input')
-        nameInput.setAttribute('class', 'input n1')
-        nameInput.setAttribute('type', 'text')
-        nameInput.setAttribute('name', 'firts-name')
-        nameInput.setAttribute('placeholder', 'Enter your firts name')
-        nameInput.setAttribute('required', '')
-
-        const lastNameInput = document.createElement('input')
-        lastNameInput.setAttribute('class', 'input n2')
-        lastNameInput.setAttribute('type', 'text')
-        lastNameInput.setAttribute('name', 'last-name')
-        lastNameInput.setAttribute('placeholder', 'Enter your last name')
-        lastNameInput.setAttribute('required', '')
-
-        const phoneInput = document.createElement('input')
-        phoneInput.setAttribute('class', 'input n3')
-        phoneInput.setAttribute('type', 'number')
-        phoneInput.setAttribute('name', 'phone-number')
-        phoneInput.setAttribute('placeholder', 'Enter your phone number')
-        phoneInput.setAttribute('required', '')
-
-        const textContent = document.createElement('input')
-        textContent.setAttribute('class', 'input n4')
-        textContent.setAttribute('type', 'tex')
-        textContent.setAttribute('name', 'text-content')
-        textContent.setAttribute('placeholder', 'Enter your order...')
-        textContent.setAttribute('required', '')
-
-        const buttonSubmit = document.createElement('input')
-        buttonSubmit.setAttribute('id', 'button-submit')
-        buttonSubmit.setAttribute('type', 'submit')
+        main.style.display = 'none' 
+        form.style.display = 'flex'
 
         form.prepend(divName)
+        form.insertBefore(h1OfForm, divName)
         divName.prepend(nameInput)
         divName.appendChild(lastNameInput)
         form.appendChild(textContent)
@@ -76,9 +80,11 @@ function callHeader() {
         form.appendChild(buttonSubmit)
     }
 
+
+    buttonOne.addEventListener('click', callButtonHome)
     function callButtonHome() {
         main.style.display = 'block'
-        form.remove()
+        form.style.display = 'none'
     }
 }
 
@@ -243,6 +249,8 @@ function callFooter() {
     </g>`
 
     content?.appendChild(footer)
+    content?.insertBefore(form, footer)
+    form.style.display = 'none'
     footer?.prepend(h1OfFooter)
     footer?.appendChild(anchorFooter)
     anchorFooter?.appendChild(svgOfFooter)
